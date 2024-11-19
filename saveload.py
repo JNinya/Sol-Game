@@ -1,5 +1,4 @@
-import json
-import os, glob
+import json, os, glob
 
 #saves a dictionary to a save file with the specified name
 def save(data, file_name):
