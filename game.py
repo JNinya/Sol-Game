@@ -1,1 +1,2 @@
-Print("Python is dog langauge")
+print("Python is dog langauge")
+
