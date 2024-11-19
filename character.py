@@ -7,8 +7,10 @@ class Prompts:
 
 
 class Character:
-    def __init__(self):
-        pass
+    def __init__(self, **character_data):
+        # Unpack dictionary into object attributes
+        for key, value in character_data.items():
+            setattr(self, key, value)
 
     @property
     def dict(self):

@@ -1,14 +1,11 @@
-#from gameHandler import GameWindow
 from character import Character
+import saveload
 
 
 player = Character()
+
 player.createFromUser()
+
 print(player.dict)
 
-#game = GameWindow()
-#game.execute()
-
-
-
-
+saveload.save(player.dict, "player")
