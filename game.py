@@ -1,2 +1,4 @@
-print("Python is dog langauge")
+import console
 
+while True:
+    console.interpret(input(":-)"))

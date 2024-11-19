@@ -1,0 +1,6 @@
+#dumb python files
+__pycache__/
+
+
+build/
+dist/
