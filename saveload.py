@@ -10,7 +10,7 @@ def load(file_name):
     with open(file_name + ".json", "r") as file:
         return json.load(file)
 
-#deletes all save files in working directory
+#deletes all save files in working directory. WARNING: There is no undoing this.
 def purge():
     json_files = glob.glob("*.json")
     for file in json_files:

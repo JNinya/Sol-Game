@@ -1,11 +1,11 @@
 from character import Character
 import saveload
 
-
+#create a new character called player
 player = Character()
 
-player.createFromUser()
+player.promptDataFromUser()
 
-print(player.dict)
+print(player)
 
-saveload.save(player.dict, "player")
+#player.save()
