@@ -1,12 +1,10 @@
+from saveload import Saveload
 from character import Character
-from saveload import saveload
 
-saveload.protectFile("config.json")
-saveload.protectFile("Honri.json")
-saveload.purge()
-
-
-
+#protect the files I need
+Saveload.protectFile("config.json")
+Saveload.protectFile("Honri.json")
+Saveload.purge()
 
 
 
