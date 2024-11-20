@@ -38,3 +38,8 @@ class GameWindow:
             self.render()
         
         self.cleanup()
+
+
+window = GameWindow()
+window.init()
+window.execute()
