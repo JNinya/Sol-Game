@@ -5,5 +5,9 @@ __pycache__/
 build/
 dist/
 
+
 #save files from the game
 *.json
+
+#json files important for config and stuff
+!config.json

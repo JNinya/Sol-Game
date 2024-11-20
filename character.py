@@ -1,30 +1,50 @@
-import saveload
+from saveload import saveload
 
 class Prompts:
-    places = ("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
     
-    @property
-    def origin(self):
-        return ('Where are you from?\n' + '\n'.join(f"{i + 1}. {place}" for i, place in enumerate(self.places)) + '\n')
+    def createPrompts(self):
+        prompts = saveload.load('config')
+        for key, prompt_data in prompts.items():
+            prompt = prompt_data["prompt"] + "\n"
+            
+            if prompt_data["type"] == "str":
+                value = input(prompt)
+            elif prompt_data["type"] == "int":
+                value = int(input(prompt))
+            elif prompt_data["type"] == "option":
+                options = eval(prompt_data["options"])
+                options = '\n'.join(f"{i + 1}. {item}" for i, item in enumerate(options))
+                n = int(input(prompt + options + '\n'))-1
+                value = options[n]
+                
+            setattr(self, key, value)
 
 
 class Character:
-    def __init__(self, **character_data):
-        for key, value in character_data.items():
-            setattr(self, key, value)
+    def __init__(self):
+        pass
 
     #returns all the attributes of the character represented as a dictionary
     @property
     def dict(self):
         return self.__dict__
     
-
+    #saves current instance of Character class as a .json file
     def save(self):
-        saveload.save(self.dict, self.__class__.__name__)
+        saveload.save(self.dict, self.name)
     
-    def promptDataFromUser(self):
+    #loads selected json file into current object
+    def load(self, name):
+        character_data = saveload.load(name)
+        for key, value in character_data.items():
+            setattr(self, key, value)
+        
+    def createNewFromUser(self):
         prompts = Prompts()
-        self.origin = prompts.places[int(input(prompts.origin))-1]
-        self.money = int(input("How much money do you have?\n"))
+        prompts.createPrompts()
+        self.name = prompts.name
+        self.origin = prompts.origin
+        self.money = prompts.money
+        self.age = prompts.age
 
 
