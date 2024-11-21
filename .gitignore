@@ -7,7 +7,7 @@ dist/
 
 
 #save files from the game
-*.json
+#*.json
 
 #json files important for config and stuff
 !config.json
