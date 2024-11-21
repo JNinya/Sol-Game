@@ -4,6 +4,9 @@ from gameobjects.character import Character
 save_directory = "savedata/"
 Saveload.setDir(save_directory)
 
-me = Character()
-me.load("max")
-print(me.dict)
+test = {
+    "test":"test"
+}
+
+
+Saveload.save(test, "test", "characters")
