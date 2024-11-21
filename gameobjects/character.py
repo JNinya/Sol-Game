@@ -37,12 +37,12 @@ class Character:
         return self.__dict__
     
     #saves current instance of Character class as a .json file
-    def save(self):
-        Saveload.save(self.dict, self.name)
+    def save(self, dir = ""):
+        Saveload.save(self.dict, self.name, dir)
     
     #loads selected json file into current object
-    def load(self, name):
-        character_data = Saveload.load(name)
+    def load(self, name, dir = ""):
+        character_data = Saveload.load(name, dir)
         for key, value in character_data.items():
             setattr(self, key, value)
         
