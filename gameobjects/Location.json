@@ -7,5 +7,9 @@
         "prompt":"What type of location is this?",
         "type":"option",
         "options":["Planet", "Moon", "Space Station", "City"]
+    },
+    "population": {
+        "prompt":"How many people live here?",
+        "type":"int"
     }
 }
