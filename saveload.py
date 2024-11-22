@@ -49,5 +49,8 @@ class Saveload:
     def purge(cls, dir = ""):
         json_files = glob.glob(cls.generateFileName("*", dir))
         for file in json_files:
+
+            file = file.split("\\")[-1]
+
             if file not in cls.protected_files:
                 os.remove(file)

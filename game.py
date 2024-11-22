@@ -10,3 +10,4 @@ test = {
 
 
 Saveload.purge()
+Saveload.purge("characters")
