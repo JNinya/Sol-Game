@@ -4,9 +4,7 @@ from gameobjects.character import Character
 #save_directory = "savedata"
 #Saveload.setDir(save_directory)
 
-test = {
-    "test":"test"
-}
-
-#Saveload.delete("test")
-#Saveload.purge("characters")
+me = Character()
+me.createNewFromUser()
+me.save("characters")
+print(me.dict)

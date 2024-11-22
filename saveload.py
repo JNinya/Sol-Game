@@ -5,7 +5,7 @@ import json, os, glob
 class Saveload:
     
     #protected files can't be deleted and won't be purged
-    _protected_files = ["config", "Honri", "max"]
+    _protected_files = ["config", "Honri", "max", "aidan"]
     
     #default directory to save the data in if not specified in the function call
     _default_dir = "savedata"
