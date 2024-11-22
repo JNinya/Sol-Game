@@ -3,7 +3,7 @@ import json, os, glob
 #saveload saves everything as .json files. Because of this, the file_name parameter should be input without the file extension. Ex: "max" instead of "max.json"
 
 class Saveload:
-    
+
     with open('config.json', 'r') as config:
         config = json.load(config)
         
@@ -13,11 +13,18 @@ class Saveload:
         #protected files can't be deleted and won't be purged
         _protected_files = config['protected_files']
     
+    """def __init__(self, directory):
+        self._default_save_directory = directory
+        print("object initilized")
+        print(self._default_save_directory)"""
 
     #generate the file name with the directory used by the functions according to the file_name, the dir, and the default_dir
     @classmethod
     def generateFileName(cls, file_name, dir):
-        return cls._default_save_directory + "/" + dir + "/" + file_name + ".json"
+        if dir == "":
+            return cls._default_save_directory + "/" + file_name + ".json"
+        else:
+            return dir + "/" + file_name + ".json"
 
     @classmethod
     def setDir(cls, directory):

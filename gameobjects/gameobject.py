@@ -1,10 +1,36 @@
 from saveload import Saveload
 
-class Gameobject:
+class GameObject:
+
+    def __init__(self):
+        self.save_directory = "savedata"
+
+    #returns all the attributes of the character represented as a dictionary
+    @property
+    def dict(self):
+        return self.__dict__
     
+    #returns the current location of the object
+    @property
+    def where(self):
+        return self.location
+
+    #saves current instance of class as a .json file
+    def save(self):
+        dir = self.save_directory
+        Saveload.save(self.dict, self.name, dir)
+    
+    #loads selected json file into current object
+    def load(self, name):
+        dir = self.save_directory
+        data = Saveload.load(name, dir)
+        for key, value in data.items():
+            setattr(self, key, value)
+
     #Prompts the user using the template provided in config.json and sets the attributes of this object to the user's answers
-    def promptUser(self, prompt_file):
-        prompts = Saveload.load(prompt_file)
+    def createNewFromUser(self):
+        game_object_file_name = self.__class__.__name__
+        prompts = Saveload.load(game_object_file_name, "gameobjects")
         for key, prompt_data in prompts.items():
             prompt = prompt_data["prompt"] + "\n"
             
@@ -20,8 +46,9 @@ class Gameobject:
                 
             setattr(self, key, value)
 
-    #sets the attributes of the provided object to whatever is on this object
+    #Depricated
+    """#sets the attributes of the provided object to whatever is on this object
     def setAttributes(self, object):
         attribute_dictionary = self.__dict__
         for key, value in attribute_dictionary.items():
-            setattr(object, key, value)
+            setattr(object, key, value)"""

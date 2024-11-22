@@ -1,0 +1,4 @@
+locations = {}
+
+class Location():
+    pass

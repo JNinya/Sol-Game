@@ -1,10 +1,9 @@
 from saveload import Saveload
 from gameobjects.character import Character
+from gameobjects.location import locations
 
-#save_directory = "savedata"
-#Saveload.setDir(save_directory)
 
 me = Character()
 me.createNewFromUser()
-me.save("characters")
 print(me.dict)
+me.save()

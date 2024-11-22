@@ -20,5 +20,10 @@
     "number": {
         "prompt":"What is your favorite number?",
         "type":"int"
+    },
+    "gender": {
+        "prompt":"What is your gender?",
+        "type":"option",
+        "options": ["Male", "Female", "Keplarian", "Zooblezorp", "Other"]
     }
 }

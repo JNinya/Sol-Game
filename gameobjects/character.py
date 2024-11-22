@@ -1,30 +1,24 @@
-from saveload import Saveload
-from gameobjects.gameobject import Gameobject
+from gameobjects.gameobject import GameObject
 
-class Character:
+class Character(GameObject):
 
     #default save folder for objects of this class
-    save_directory = "characters"
+    #save_directory = "savedata/characters"
     
     def __init__(self):
-        pass
+        self.save_directory = "savedata/characters"
 
-    #returns all the attributes of the character represented as a dictionary
-    @property
-    def dict(self):
-        return self.__dict__
-    
-    #saves current instance of Character class as a .json file
-    def save(self, dir = save_directory):
-        Saveload.save(self.dict, self.name, dir)
-    
-    #loads selected json file into current object
-    def load(self, name, dir = save_directory):
-        character_data = Saveload.load(name, dir)
-        for key, value in character_data.items():
-            setattr(self, key, value)
-        
+    #move the location of this character
+    def travel(self, destination):
+        #set object attribute
+        self.location = destination
+
+        #raise NotImplementedError
+        #not implemented
+        #update local location object
+
+    """#creates a new object in the command line
     def createNewFromUser(self):
-        p = Gameobject()
-        p.promptUser(self.__class__.__name__)
-        p.setAttributes(self)
+        p = GameObject()
+        p.createNewObjectFromUser(self.__class__.__name__)
+        p.setAttributes(self)"""
