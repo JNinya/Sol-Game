@@ -8,6 +8,5 @@ test = {
     "test":"test"
 }
 
-
-Saveload.purge()
-Saveload.purge("characters")
+#Saveload.delete("test")
+#Saveload.purge("characters")

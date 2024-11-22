@@ -5,19 +5,19 @@ import json, os, glob
 class Saveload:
     
     #protected files can't be deleted and won't be purged
-    protected_files = ["config.json", "Honri.json", "max.json"]
+    _protected_files = ["config", "Honri", "max"]
     
     #default directory to save the data in if not specified in the function call
-    default_dir = "savedata"
+    _default_dir = "savedata"
 
     #generate the file name with the directory used by the functions according to the file_name, the dir, and the default_dir
     @classmethod
     def generateFileName(cls, file_name, dir):
-        return cls.default_dir + "/" + dir + "/" + file_name + ".json"
+        return cls._default_dir + "/" + dir + "/" + file_name + ".json"
 
     @classmethod
     def setDir(cls, directory):
-        cls.default_dir = directory
+        cls._default_dir = directory
 
     #saves a dictionary to a save file with the specified name. Overwrites the file if it already exists
     #parameters: File data, File name, Save Directory within default_dir (optional)
@@ -35,14 +35,13 @@ class Saveload:
     #deletes a file
     @classmethod
     def delete(cls, file_name, dir = ""):
-        file_name = file_name + ".json"
-        if file_name not in cls.protected_files:
+        if file_name not in cls._protected_files:
             os.remove(cls.generateFileName(file_name, dir))
 
     #adds a new protected file
     @classmethod
-    def protectFile(cls, file_name, dir = ""):
-        cls.protected_files.append(cls.generateFileName(file_name, dir))
+    def protectFile(cls, file_name):
+        cls._protected_files.append(file_name)
 
     #deletes all save files in working directory. WARNING: There is no undoing this.
     @classmethod
@@ -51,6 +50,7 @@ class Saveload:
         for file in json_files:
 
             file = file.split("\\")[-1]
+            file = file.split(".")[0]
 
-            if file not in cls.protected_files:
-                os.remove(file)
+            if file not in cls._protected_files:
+                os.remove(cls.generateFileName(file, dir))
