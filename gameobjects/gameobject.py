@@ -3,8 +3,8 @@ from saveload import Saveload
 class Gameobject:
     
     #Prompts the user using the template provided in config.json and sets the attributes of this object to the user's answers
-    def promptUser(self):
-        prompts = Saveload.load('config')
+    def promptUser(self, prompt_file):
+        prompts = Saveload.load(prompt_file)
         for key, prompt_data in prompts.items():
             prompt = prompt_data["prompt"] + "\n"
             
@@ -13,7 +13,7 @@ class Gameobject:
             elif prompt_data["type"] == "int":
                 value = int(input(prompt))
             elif prompt_data["type"] == "option":
-                options = eval(prompt_data["options"])
+                options = prompt_data["options"]
                 options_string = '\n'.join(f"{i + 1}. {item}" for i, item in enumerate(options))
                 n = int(input(prompt + options_string + '\n'))-1
                 value = options[n]

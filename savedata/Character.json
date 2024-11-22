@@ -6,12 +6,12 @@
     "origin": {
         "prompt":"Where are you from?",
         "type":"option",
-        "options": "('Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune')"
+        "options": ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
     },
     "background": {
         "prompt":"What is your background?",
         "type":"option",
-        "options": "('Poor', 'Middle class', 'Wealthy')"
+        "options": ["Poor", "Middle class", "Wealthy"]
     },
     "age": {
         "prompt":"How old are you?",

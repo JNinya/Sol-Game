@@ -4,20 +4,24 @@ import json, os, glob
 
 class Saveload:
     
-    #protected files can't be deleted and won't be purged
-    _protected_files = ["config", "Honri", "max", "aidan"]
+    with open('config.json', 'r') as config:
+        config = json.load(config)
+        
+        #default directory to save the data in if not specified in the function call
+        _default_save_directory = config['default_save_directory']
+
+        #protected files can't be deleted and won't be purged
+        _protected_files = config['protected_files']
     
-    #default directory to save the data in if not specified in the function call
-    _default_dir = "savedata"
 
     #generate the file name with the directory used by the functions according to the file_name, the dir, and the default_dir
     @classmethod
     def generateFileName(cls, file_name, dir):
-        return cls._default_dir + "/" + dir + "/" + file_name + ".json"
+        return cls._default_save_directory + "/" + dir + "/" + file_name + ".json"
 
     @classmethod
     def setDir(cls, directory):
-        cls._default_dir = directory
+        cls._default_save_directory = directory
 
     #saves a dictionary to a save file with the specified name. Overwrites the file if it already exists
     #parameters: File data, File name, Save Directory within default_dir (optional)

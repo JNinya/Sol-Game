@@ -1,0 +1,4 @@
+{
+    "default_save_directory": "savedata",
+    "protected_files": ["config", "Honri", "max", "aidan"]
+}

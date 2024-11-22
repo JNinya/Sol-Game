@@ -26,5 +26,5 @@ class Character:
         
     def createNewFromUser(self):
         p = Gameobject()
-        p.promptUser()
+        p.promptUser(self.__class__.__name__)
         p.setAttributes(self)
