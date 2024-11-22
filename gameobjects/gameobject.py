@@ -2,8 +2,11 @@ from saveload import Saveload
 
 class GameObject:
 
+    save_directory = "savedata"
+
     def __init__(self):
-        self.save_directory = "savedata"
+        #self.save_directory = "savedata"
+        pass
 
     #returns all the attributes of the character represented as a dictionary
     @property
@@ -17,12 +20,12 @@ class GameObject:
 
     #saves current instance of class as a .json file
     def save(self):
-        dir = self.save_directory
+        dir = self.__class__.save_directory
         Saveload.save(self.dict, self.name, dir)
     
     #loads selected json file into current object
     def load(self, name):
-        dir = self.save_directory
+        dir = self.__class__.save_directory
         data = Saveload.load(name, dir)
         for key, value in data.items():
             setattr(self, key, value)

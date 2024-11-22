@@ -55,7 +55,8 @@ class Saveload:
         cls._protected_files.append(file_name)
 
     #deletes all save files in working directory. WARNING: There is no undoing this.
-    @classmethod
+    #I'm disabling this for now so I don't accidentally delete all my data
+    """@classmethod
     def purge(cls, dir = ""):
         json_files = glob.glob(cls.generateFileName("*", dir))
         for file in json_files:
@@ -64,4 +65,4 @@ class Saveload:
             file = file.split(".")[0]
 
             if file not in cls._protected_files:
-                os.remove(cls.generateFileName(file, dir))
+                os.remove(cls.generateFileName(file, dir))"""

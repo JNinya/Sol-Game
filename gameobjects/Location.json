@@ -1,0 +1,11 @@
+{
+    "name": {
+        "prompt":"What is the name of this location?",
+        "type":"str"
+    },
+    "type": {
+        "prompt":"What type of location is this?",
+        "type":"option",
+        "options":["Planet", "Moon", "Space Station", "City"]
+    }
+}
