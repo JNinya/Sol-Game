@@ -6,25 +6,14 @@ class Saveload:
 
     with open('config.json', 'r') as config:
         config = json.load(config)
-        
-        #default directory to save the data in if not specified in the function call
-        _default_save_directory = config['default_save_directory']
 
         #protected files can't be deleted and won't be purged
         _protected_files = config['protected_files']
-    
-    """def __init__(self, directory):
-        self._default_save_directory = directory
-        print("object initilized")
-        print(self._default_save_directory)"""
 
     #generate the file name with the directory used by the functions according to the file_name, the dir, and the default_dir
     @classmethod
     def generateFileName(cls, file_name, dir):
-        if dir == "":
-            return cls._default_save_directory + "/" + file_name + ".json"
-        else:
-            return dir + "/" + file_name + ".json"
+        return dir + "/" + file_name + ".json"
 
     @classmethod
     def setDir(cls, directory):
