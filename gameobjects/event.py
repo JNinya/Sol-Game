@@ -1,2 +1,4 @@
 class Event:
-    pass
+    
+    def execute():
+        pass
