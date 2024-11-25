@@ -47,8 +47,7 @@ class Catalog():
             for item in eval("cls."+list):
                 if item.name == name:
                     return item
-                else:
-                    return f"Object with name {name} not found!"
+        print(f"Object with name {name} not found!")
         
         
 

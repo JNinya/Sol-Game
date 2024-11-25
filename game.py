@@ -2,8 +2,12 @@ from catalog import Catalog
 
 Catalog.load()
 
-aidan = Catalog.find('aidan')
+name = input("What is your name?\n")
 
-aidan.origin = "Earth"
+me = Catalog.find(name)
 
-Catalog.save()
+print("Welcome back " + me.name)
+print("Here is your secret data:")
+print(me.dict)
+
+#Catalog.save()
