@@ -1,7 +1,17 @@
 from gameobjects.event import Event
-from gameobjects.location import Location
+from catalog import Catalog
 
 class Wormhole(Event):
     
-    def execute(location):
-        pass
+    #take all characters at location and move them to destination
+    def execute(location, destination):
+        
+        search_dict = {
+        'type':'Character',
+        'location':location.name
+        }
+
+        results = Catalog.search(search_dict)
+
+        for item in results:
+            item.travel(destination)

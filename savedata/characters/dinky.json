@@ -1,9 +1,10 @@
 {
+    "type": "Character",
     "name": "dinky",
     "origin": "Mercury",
     "background": "Poor",
     "age": 1,
     "number": 1,
     "gender": "Male",
-    "location": "Earth"
+    "location": "Luna"
 }

@@ -1,5 +1,6 @@
 {
     "members": [],
+    "type": "Location",
     "name": "Mars",
-    "type": "Planet"
+    "location_type": "Planet"
 }

@@ -36,7 +36,10 @@ class Catalog():
 
                 game_object = eval(object_type + "()")
 
-                game_object.load(file)
+                try:
+                    game_object.load(file)
+                except:
+                    print("Error loading json file")
                 
                 eval("cls."+folder).append(game_object)
 
@@ -45,9 +48,49 @@ class Catalog():
     def find(cls, name):
         for list in cls.save_paths.values():
             for item in eval("cls."+list):
-                if item.name == name:
-                    return item
+                if hasattr(item, "name"):
+                    if item.name == name:
+                        return item
+                else:
+                    print("Error loading json file: name attribute missing")
         print(f"Object with name {name} not found!")
+
+    @classmethod
+    def search(cls, search_dict):
+        
+        return_list = []
+
+        #iterate through each object type
+        for type, list in cls.save_paths.items():
+            
+            #iterate through each item in list
+            for item in eval("cls."+list):
+                #for each item in list of type
+                
+                #iterate through each requirement given by the search dict
+                for attribute, value  in search_dict.items():
+                    
+                    #print(f"type: {type}, item: {item}, key: {attribute}, value: {value}")
+
+                    #break if attribute doesn't exist
+                    if not hasattr(item, attribute):
+                        break
+
+                    #break if attribute does not have the correct value
+                    if not (eval(f"item.{attribute}") == value):
+                        break
+
+                #print item if the above for loop executed all the way through without breaking
+                else:
+                    return_list.append(item)
+                    
+        if return_list != []:
+            return return_list
+        else:
+            print("No objects with those attributes found")
+        
+        
+
         
         
 

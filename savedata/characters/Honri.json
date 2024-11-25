@@ -1,9 +1,10 @@
 {
+    "type": "Character",
     "name": "Honri",
     "origin": "Mars",
     "background": "Poor",
     "age": 1,
     "number": 1,
     "money": 69,
-    "location": "Earth"
+    "location": "Mars"
 }

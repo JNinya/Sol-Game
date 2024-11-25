@@ -11,6 +11,3 @@ class Character(GameObject):
     def travel(self, destination):
         
         self.location = destination.name
-
-        raise NotImplementedError
-        #destination.addMember(self.name)

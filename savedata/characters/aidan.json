@@ -1,8 +1,9 @@
 {
+    "type": "Character",
     "name": "aidan",
     "origin": "Earth",
     "background": "Wealthy",
     "age": 72,
     "number": 69,
-    "location": "Earth"
+    "location": "Luna"
 }

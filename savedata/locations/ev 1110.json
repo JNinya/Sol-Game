@@ -1,6 +1,7 @@
 {
     "members": [],
+    "type": "Location",
     "name": "ev 1110",
-    "type": "Space Station",
+    "location_type": "Space Station",
     "population": 2
 }

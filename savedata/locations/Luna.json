@@ -1,5 +1,6 @@
 {
     "members": [],
+    "type": "Location",
     "name": "Luna",
-    "type": "Moon"
+    "location_type": "Moon"
 }
