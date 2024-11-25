@@ -4,5 +4,6 @@
     "background": "Poor",
     "age": 1,
     "number": 1,
-    "gender": "Male"
+    "gender": "Male",
+    "location": "Earth"
 }

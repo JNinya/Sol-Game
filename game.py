@@ -1,10 +1,9 @@
-from saveload import Saveload
-import glob
-from gameobjects.character import Character
-from gameobjects.location import Location
-from savedata.events.blowupmoon import BlowUpMoon
+from catalog import Catalog
 
+Catalog.load()
 
-BlowUpMoon.execute("tetss")
+aidan = Catalog.find('aidan')
 
+aidan.origin = "Earth"
 
+Catalog.save()

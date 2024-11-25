@@ -2,11 +2,11 @@ from saveload import Saveload
 
 class GameObject:
 
-    save_directory = "savedata"
+    save_path = "savedata"
 
-    def __init__(self):
-        #self.save_directory = "savedata"
-        pass
+    def __init__(self, object_name = ""):
+        if object_name != "":
+            self.load(object_name)
 
     #returns all the attributes of the character represented as a dictionary
     @property
@@ -20,12 +20,12 @@ class GameObject:
 
     #saves current instance of class as a .json file
     def save(self):
-        dir = self.__class__.save_directory
+        dir = self.__class__.save_path
         Saveload.save(self.dict, self.name, dir)
     
     #loads selected json file into current object
     def load(self, name):
-        dir = self.__class__.save_directory
+        dir = self.__class__.save_path
         data = Saveload.load(name, dir)
         for key, value in data.items():
             setattr(self, key, value)
@@ -33,7 +33,7 @@ class GameObject:
     #Prompts the user using the template provided in config.json and sets the attributes of this object to the user's answers
     def createNewFromUser(self):
         game_object_file_name = self.__class__.__name__
-        prompts = Saveload.load(game_object_file_name, "gameobjects")
+        prompts = Saveload.load(game_object_file_name, "gameobjects/object_config_files")
         for key, prompt_data in prompts.items():
             prompt = prompt_data["prompt"] + "\n"
             

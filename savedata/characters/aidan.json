@@ -1,7 +1,8 @@
 {
     "name": "aidan",
-    "origin": "Mercury",
+    "origin": "Earth",
     "background": "Wealthy",
     "age": 72,
-    "number": 69
+    "number": 69,
+    "location": "Earth"
 }

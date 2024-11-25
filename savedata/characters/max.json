@@ -4,5 +4,6 @@
     "background": "Wealthy",
     "age": 10,
     "number": 1,
-    "money": 1000
+    "money": 1000,
+    "location": "Earth"
 }
