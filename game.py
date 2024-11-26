@@ -1,21 +1,18 @@
 from catalog import Catalog
-from savedata.events.wormhole import Wormhole
 
 Catalog.load()
 
-location = Catalog.find('Earth')
-destination = Catalog.find('Luna')
+name = input("What is your name?\n")
 
-Wormhole.execute(location, destination)
+me = Catalog.find(name)
+
+print(f"Welcome back {me.name}")
+print(f"You are currently at {me.location}")
 
 
-search_dict = {
-    'type':'Character'
-}
 
-results = Catalog.search(search_dict)
 
-for item in results:
-    print(item.location)
 
+
+#--------------------------------
 Catalog.save()

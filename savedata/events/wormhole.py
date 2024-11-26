@@ -5,7 +5,7 @@ class Wormhole(Event):
     
     #take all characters at location and move them to destination
     def execute(location, destination):
-        
+
         search_dict = {
         'type':'Character',
         'location':location.name
@@ -13,5 +13,6 @@ class Wormhole(Event):
 
         results = Catalog.search(search_dict)
 
-        for item in results:
-            item.travel(destination)
+        if results is not None:
+            for item in results:
+                item.travel(destination)
