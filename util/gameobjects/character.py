@@ -1,8 +1,8 @@
-from gameobjects.gameobject import GameObject
+from util.gameobjects.gameobject import GameObject
 
 class Character(GameObject):
 
-    save_path = "savedata/characters"
+    save_path = "gamedata/savedgameobjects/characters"
 
     def __init__(self, object_name = ""):
         super().__init__(object_name)

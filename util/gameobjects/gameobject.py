@@ -1,8 +1,8 @@
-from saveload import Saveload
+from util.saveload import Saveload
 
 class GameObject:
 
-    save_path = "savedata"
+    save_path = "gamedata"
 
     def __init__(self, object_name = ""):
         if object_name != "":
@@ -33,7 +33,7 @@ class GameObject:
     #Prompts the user using the template provided in config.json and sets the attributes of this object to the user's answers
     def createNewFromUser(self):
         game_object_file_name = self.__class__.__name__
-        prompts = Saveload.load(game_object_file_name, "gameobjects/object_config_files")
+        prompts = Saveload.load(game_object_file_name, "util/gameobjects/object_config_files")
         for key, prompt_data in prompts.items():
             prompt = prompt_data["prompt"] + "\n"
             
@@ -48,6 +48,7 @@ class GameObject:
                 value = options[n]
                 
             setattr(self, key, value)
+        setattr(self, "type", game_object_file_name)
 
     #Depricated
     """#sets the attributes of the provided object to whatever is on this object

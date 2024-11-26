@@ -1,16 +1,14 @@
-from catalog import Catalog
-from savedata.events.start import Start
-from savedata.events.input import Input
-from savedata.events.update import Update
-from savedata.events.render import Render
+from util.catalog import Catalog
+from util.gameloop.start import Start
+from util.gameloop.input import Input
+from util.gameloop.update import Update
+from util.gameloop.render import Render
 
 Catalog.load()
 
-running = True
-
 Start.execute()
 
-while running:
+while Start.running:
     Input.execute()
     Update.execute()
     Render.execute()

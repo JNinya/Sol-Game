@@ -1,18 +1,20 @@
 import glob
-from gameobjects.character import Character
-from gameobjects.location import Location
+from util.gameobjects.character import Character
+from util.gameobjects.location import Location
 
 #the catalog contains references to all the gameobjects
 class Catalog():
     characters = []
     locations = []
 
+    path = "gamedata/savedgameobjects/"
+
     save_paths = {
         "Character":"characters",
         "Location":"locations"
     }
 
-    #save catalog to json files in savedata
+    #save catalog to json files in gamedata
     @classmethod
     def save(cls):
         for list in cls.save_paths.values():
@@ -20,13 +22,13 @@ class Catalog():
                 item.save()
 
 
-    #load catalog from json files in savedata
+    #load catalog from json files in gamedata
     @classmethod
     def load(cls):
-        path = "savedata/"
+
 
         for object_type, folder in cls.save_paths.items():
-            subpath = path + folder + "/*.json"
+            subpath = cls.path + folder + "/*.json"
 
             files = glob.glob(subpath)
 
@@ -53,7 +55,8 @@ class Catalog():
                         return item
                 else:
                     print("Error loading json file: name attribute missing")
-        print(f"Object with name {name} not found!")
+        #print(f"Object with name {name} not found!")
+        raise NameError("No object found")
 
     @classmethod
     def search(cls, search_dict):
@@ -83,11 +86,8 @@ class Catalog():
                 #print item if the above for loop executed all the way through without breaking
                 else:
                     return_list.append(item)
-                    
-        if return_list != []:
-            return return_list
-        else:
-            print("No objects with those attributes found")
+
+        return return_list
         
         
 

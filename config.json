@@ -1,4 +1,4 @@
 {
-    "default_save_directory": "savedata",
+    "default_save_directory": "gamedata",
     "protected_files": ["config", "Honri", "max", "aidan"]
 }

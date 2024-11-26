@@ -1,5 +1,5 @@
-from gameobjects.event import Event
-from catalog import Catalog
+from util.gameobjects.event import Event
+from util.catalog import Catalog
 
 class Wormhole(Event):
     
