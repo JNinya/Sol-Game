@@ -1,7 +1,5 @@
 {
-    "members": [],
     "type": "Location",
     "name": "Earth",
-    "location_type": "Planet",
-    "location": "Earth"
+    "location_type": "Planet"
 }

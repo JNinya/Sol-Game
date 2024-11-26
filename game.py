@@ -1,18 +1,19 @@
 from catalog import Catalog
+from savedata.events.start import Start
+from savedata.events.input import Input
+from savedata.events.update import Update
+from savedata.events.render import Render
 
 Catalog.load()
 
-name = input("What is your name?\n")
+running = True
 
-me = Catalog.find(name)
+Start.execute()
 
-print(f"Welcome back {me.name}")
-print(f"You are currently at {me.location}")
-
-
-
-
+while running:
+    Input.execute()
+    Update.execute()
+    Render.execute()
 
 
-#--------------------------------
 Catalog.save()

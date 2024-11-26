@@ -1,7 +1,8 @@
 from gameobjects.event import Event
 from catalog import Catalog
+from savedata.events.start import Start
 
-class Template(Event):
+class Update(Event):
     
     def execute():
         pass
