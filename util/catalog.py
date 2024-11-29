@@ -1,6 +1,6 @@
 import glob
-from util.gameobjects.character import Character
-from util.gameobjects.location import Location
+from gameobjects.character import Character
+from gameobjects.location import Location
 
 #the catalog contains references to all the gameobjects
 class Catalog():

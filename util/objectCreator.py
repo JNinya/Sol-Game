@@ -1,6 +1,6 @@
 from util.catalog import Catalog
-from util.gameobjects.character import Character
-from util.gameobjects.location import Location
+from gameobjects.character import Character
+from gameobjects.location import Location
 
 
 class ObjectCreator():

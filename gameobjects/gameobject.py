@@ -33,7 +33,7 @@ class GameObject:
     #Prompts the user using the template provided in config.json and sets the attributes of this object to the user's answers
     def createNewFromUser(self):
         game_object_file_name = self.__class__.__name__
-        prompts = Saveload.load(game_object_file_name, "util/gameobjects/object_config_files")
+        prompts = Saveload.load(game_object_file_name, "gameobjects/object_config_files")
         for key, prompt_data in prompts.items():
             prompt = prompt_data["prompt"] + "\n"
             

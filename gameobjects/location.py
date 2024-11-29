@@ -1,4 +1,4 @@
-from util.gameobjects.gameobject import GameObject
+from gameobjects.gameobject import GameObject
 
 class Location(GameObject):
 
