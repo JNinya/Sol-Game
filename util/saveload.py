@@ -15,9 +15,10 @@ class Saveload:
     def generateFileName(cls, file_name, dir):
         return dir + "/" + file_name + ".json"
 
-    @classmethod
+    #not used anymore. I can probably delete it but I'm just gonna comment it out for now.
+    """@classmethod
     def setDir(cls, directory):
-        cls._default_save_directory = directory
+        cls._default_save_directory = directory"""
 
     #saves a dictionary to a save file with the specified name. Overwrites the file if it already exists
     #parameters: File data, File name, Save Directory within default_dir (optional)

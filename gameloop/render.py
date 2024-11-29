@@ -1,5 +1,5 @@
 from util.catalog import Catalog
-from util.gameloop.start import Start
+from gameloop.start import Start
 import os
 
 class Render():

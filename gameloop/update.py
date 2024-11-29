@@ -1,6 +1,6 @@
 from util.catalog import Catalog
-from util.gameloop.start import Start
-from util.gameloop.input import Input
+from gameloop.start import Start
+from gameloop.input import Input
 from util.objectCreator import ObjectCreator
 
 class Update():

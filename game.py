@@ -1,8 +1,9 @@
 from util.catalog import Catalog
-from util.gameloop.start import Start
-from util.gameloop.input import Input
-from util.gameloop.update import Update
-from util.gameloop.render import Render
+from gui import gui
+from gameloop.start import Start
+from gameloop.input import Input
+from gameloop.update import Update
+from gameloop.render import Render
 
 Catalog.load()
 

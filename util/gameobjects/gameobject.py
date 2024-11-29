@@ -2,7 +2,7 @@ from util.saveload import Saveload
 
 class GameObject:
 
-    save_path = "gamedata"
+    save_path = "gamedata/savedgameobjects"
 
     def __init__(self, object_name = ""):
         if object_name != "":
