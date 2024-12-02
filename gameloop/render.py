@@ -1,5 +1,8 @@
 import pygame
 from gui.gui import Gui
+from gui.menu import Menu
+from gui.button import Button
+import random
 import os
 
 from gameloop.start import Start
@@ -8,7 +11,16 @@ from util.catalog import Catalog
 class Render():
     
     def execute():
-        
+
+        Gui.screen.fill("black")
+
+        x = random.randint(0,Gui.width)
+        y = random.randint(0,Gui.height)
+
+        myb = Button((x,y,50,50),"blue")
+
+        myb.blit()
+
         
         pygame.display.flip()
 

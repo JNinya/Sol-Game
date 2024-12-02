@@ -2,7 +2,7 @@ import pygame
 
 class Gui:
     width = 1000
-    height = 600
+    height = 800
     running = True
 
     @classmethod
