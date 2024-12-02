@@ -10,7 +10,8 @@
     },
     "location": {
         "prompt":"Where are you currently?",
-        "type":"str"
+        "type":"option",
+        "options": ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
     },
     "background": {
         "prompt":"What is your background?",

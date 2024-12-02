@@ -2,6 +2,7 @@ from gameobjects.gameobject import GameObject
 
 class Character(GameObject):
 
+    dir_name = "characters"
     save_path = "gamedata/savedgameobjects/characters"
 
     def __init__(self, object_name = ""):

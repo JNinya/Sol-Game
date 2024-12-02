@@ -1,6 +1,7 @@
 from util.catalog import Catalog
 from gameloop.start import Start
 from gameloop.input import Input
+from gui.gui import Gui
 from util.objectCreator import ObjectCreator
 
 class Update():
@@ -25,7 +26,7 @@ class Update():
             return
 
         if user_input == "exit":
-            Start.running = False
+            Gui.running = False
             return
 
         try:

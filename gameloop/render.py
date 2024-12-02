@@ -1,13 +1,20 @@
 import pygame
 from gui.gui import Gui
+import os
+
+from gameloop.start import Start
+from util.catalog import Catalog
 
 class Render():
     
     def execute():
         
+        
         pygame.display.flip()
 
         Gui.clock.tick(60)
+
+
         
         
         
