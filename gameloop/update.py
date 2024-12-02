@@ -6,7 +6,18 @@ from util.objectCreator import ObjectCreator
 class Update():
     
     def execute():
-        me = Start.me
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        """me = Start.me
         user_input = Input.user_input
 
         if user_input == "save":
@@ -25,6 +36,6 @@ class Update():
             choice = input(f"Location {user_input} does not exist. Would you like to create it (y/n)?")
             if choice == "y":
                 destination_obj = ObjectCreator.createLocation()
-                me.travel(destination_obj)
+                me.travel(destination_obj)"""
 
         

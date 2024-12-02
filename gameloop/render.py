@@ -1,11 +1,35 @@
-from util.catalog import Catalog
-from gameloop.start import Start
-import os
+import pygame
+from gui.gui import Gui
 
 class Render():
     
     def execute():
-        me = Start.me
+        
+        pygame.display.flip()
+
+        Gui.clock.tick(60)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        """me = Start.me
         
         os.system('cls')
 
@@ -25,4 +49,4 @@ class Render():
 
         print(f"You are at {me.location}")
         print(f"Other people at {me.location}: {characters_at_location_str}")
-        print("Where do you want to go?")
+        print("Where do you want to go?")"""

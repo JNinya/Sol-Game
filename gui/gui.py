@@ -1,34 +1,14 @@
 import pygame
 
+class Gui:
+    width = 1000
+    height = 600
+    running = True
 
-width = 1000
-height = 600
-running = True
+    @classmethod
+    def init(cls):
+        pygame.init()
 
-pygame.init()
+        cls.clock = pygame.time.Clock()
 
-clock = pygame.time.Clock()
-
-screen = pygame.display.set_mode((width, height))
-
-surface = pygame.Surface((width, height))
-
-surface.fill("blue")
-
-i = 0
-
-while running:
-    
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-
-    screen.fill("green")
-    
-    pygame.Surface.blit(screen, surface, (i, 100))
-
-    i+=1
-
-    pygame.display.flip()
-
-    clock.tick(60)
+        cls.screen = pygame.display.set_mode((cls.width, cls.height))

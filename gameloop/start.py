@@ -4,9 +4,24 @@ import os
 
 class Start():
 
-    me = ""
 
-    running = True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    """me = ""
 
     @classmethod
     def execute(cls):
@@ -27,4 +42,4 @@ class Start():
 
         
         print(f"You are currently at {cls.me.location}")
-        print("Where do you want to go?")
+        print("Where do you want to go?")"""
